@@ -4,6 +4,9 @@ This is a demonstration of the problem with using AMOP for type checking.
 
 ** Running it
 
+Assuming you have ultralisp set up and your equivalent of libgtk-4-dev
+installed.
+
 In your REPL please execute
 
 #+begin_example
