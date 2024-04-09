@@ -1,0 +1,22 @@
+* README
+
+This is a demonstration of the problem with using AMOP for type checking.
+
+** Running it
+
+In your REPL please execute
+
+#+begin_example
+(load "~/Programming/Lisp/clops/clops.lisp")
+(in-package :clops)
+(main)
+#+end_example
+
+Then press F2, F3, F4 and F5. Observe what was drawn try putting mouse over the
+squares. Then try pressing F7 and F8 to see the rightmost square moving with the
+internal structure preserved.
+
+** Problem
+
+I am running latest SBCL compiled from source. I observed strange problems that
+I will try to demonstrate here.

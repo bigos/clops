@@ -1,26 +1,10 @@
-;;; clops
+;;; clops, see the README.org
+
 (declaim (optimize (speed 0) (safety 2) (debug 3)))
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (ql:quickload '(#:cl-gtk4 #:cl-gdk4 #:cl-glib #:cl-cairo2
                   #:serapeum #:defclass-std #:cl-data-structures)))
-
-;;; my hypothetical structured notes
-(when nil
-  '(:structured-notes
-    (belongs-to :section)
-    (has-one :document)
-    (actions
-     :section-add-to
-     :section-remove-from
-     :render-text
-     :resize-section)
-    (sections
-     (:coordinates
-      elements-within-sections
-      will use relative coordinates
-      ))
-    ))
 
 (defpackage #:checked-class
   (:use :cl)
