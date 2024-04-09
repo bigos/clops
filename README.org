@@ -20,3 +20,37 @@ internal structure preserved.
 
 I am running latest SBCL compiled from source. I observed strange problems that
 I will try to demonstrate here.
+
+*** metaclass
+
+Commenting out the metaclass in
+
+#+begin_src lisp
+(defclass/std box-status (box)
+  ((status :std nil))
+  ;; (:metaclass checked-class:checked-class)
+  )
+#+end_src
+
+gives the error that has confused me
+
+#+begin_example
+The class #<CHECKED-CLASS:CHECKED-CLASS CLOPS::BOX> was
+specified as a superclass of the class
+#<STANDARD-CLASS CLOPS::BOX-STATUS {100C733A93}>, but the
+metaclasses #<STANDARD-CLASS CHECKED-CLASS:CHECKED-CLASS> and
+#<STANDARD-CLASS COMMON-LISP:STANDARD-CLASS> are incompatible.
+Define a method for SB-MOP:VALIDATE-SUPERCLASS to avoid this
+error.
+#+end_example
+
+*** brackets
+
+I also observed an error with unbalanced parentheses. I can not replicate it. In
+Emacs all the parentheses looked OK. Is it possible that I stumbled upon an
+unrelated SBCL bug?
+
+#+begin_example
+sbcl --version
+SBCL 2.4.3.86-fd7b2a2b0
+#+end_example

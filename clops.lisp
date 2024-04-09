@@ -195,7 +195,8 @@
 
 (defclass/std box-status (box)
   ((status :std nil))
-  (:metaclass checked-class:checked-class))
+  ;; (:metaclass checked-class:checked-class)
+  )
 
 (defclass/std box-section (box-status)
   ()
