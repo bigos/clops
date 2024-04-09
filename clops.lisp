@@ -198,6 +198,11 @@
   ;; (:metaclass checked-class:checked-class)
   )
 
+;;; only metaclass works -  the following does not work despite SBCL suggesting it is the solution
+;;; what I am misssing here?
+;; (defmethod sb-mop:validate-superclass ((class box-status) (superclass CHECKED-CLASS:CHECKED-CLASS))
+;;   T)
+
 (defclass/std box-section (box-status)
   ()
   (:metaclass checked-class:checked-class))
