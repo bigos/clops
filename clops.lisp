@@ -4,7 +4,7 @@
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (ql:quickload '(#:cl-gtk4 #:cl-gdk4 #:cl-glib #:cl-cairo2
-                  #:serapeum #:defclass-std #:cl-data-structures)))
+                  #:serapeum #:defclass-std #:cl-data-structures #:closer-mop)))
 
 (defpackage #:checked-class
   (:use :cl)
@@ -200,7 +200,7 @@
 
 ;;; only metaclass works -  the following does not work despite SBCL suggesting it is the solution
 ;;; what I am misssing here?
-(defmethod sb-mop:validate-superclass ((class box-status) (superclass CHECKED-CLASS:CHECKED-CLASS))
+(defmethod closer-mop:validate-superclass ((class box-status) (superclass standard-class))
   T)
 
 (defclass/std box-section (box-status)
