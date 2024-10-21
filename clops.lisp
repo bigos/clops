@@ -70,10 +70,13 @@
 ;; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ type checking in a class ~~~~~~~~~~~~~~~~~
 ;; https://stackoverflow.com/questions/51723992/how-to-force-slots-type-to-be-checked-during-make-instance/56920918
 
+;;; also optimization SAFETY 3 gives the ability to check the type
+
+
 ;;; First the metaclass:
 ;;; first a metaclass for classes which checks slot writes
 (defclass checked-class (standard-class)
-    ())
+  ())
 
 ;;; this is a MOP method, probably use CLOSER-MOP for a portable version
 (defmethod sb-mop:validate-superclass ((class checked-class) (superclass standard-class))
