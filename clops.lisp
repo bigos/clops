@@ -1,6 +1,6 @@
 ;;; clops, see the README.org
 
-(declaim (optimize (speed 0) (safety 2) (debug 3)))
+(declaim (optimize (speed 0) (safety 3) (debug 3)))
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (ql:quickload '(#:cl-gtk4 #:cl-gdk4 #:cl-glib #:cl-cairo2
